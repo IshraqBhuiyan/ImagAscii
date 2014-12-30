@@ -1,0 +1,41 @@
+public abstract class something{
+  public int[][] converToGrayScale(image this){ // returns a 2D array of the grayscales of each pixel
+    int[] ans = new int[this.getwidth][this.getheight];
+    for(int i=0;i<this.getheight();i++){
+      for(int t=0;t<this.getwidth();t++){
+        int gray = pixel t,i converted to grayscale;
+        ans[t][i] = gray;
+      }
+    }
+    return ans;
+  }
+  
+  public int[][] breakup(int[][] scale; int height, int width) // breaks up the image into blocks of height and width
+  int[][] ans;
+  for(int i=0;i<scale.length/width;i++){
+    iterates throughthe block and outputs the average grayscale value to an output array;
+  }
+  
+  public String grayToASCII(int gray){//converts a specific grayscale value to an ascii character
+    do something  
+  }
+  
+  public String makeAsciiArt(array[][] grid){
+    String ans = "";
+    for(int i=0;i<grid.length;i++){
+      String line = "";
+      for(int t=0;t<grid[i].length;i++){
+        line += grayToASCII(grid[i][t]);
+      }
+      ans += line+"\n";
+    }
+    return ans;
+  }
+  
+  public static void main(Stringp[]args){
+    file image = read(filename);
+    grayscale = image.converToGrayscale();
+    grid = image.breakup();
+    System.out.println(makeAsciiArt(grid));
+  }
+}
