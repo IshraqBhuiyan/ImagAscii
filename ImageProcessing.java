@@ -24,14 +24,14 @@ public class ImageProcessing{
     }
 
 
-    public double average(int[][] grayscale,int width, int height,int x,int y){// returns the average grayscale of a widthxheight at x,y
-	double ans = 0.0;
+    public static int average(int[][] grayscale,int width, int height,int x,int y){// returns the average grayscale of a widthxheight at x,y
+	int ans = 0;
 	for(int i = 0;i<width;i++){
 	    for(int t = 0; i<height;t++){
 		ans += grayscale[i+x][t+y];
 	    }
 	}
-	return ans/(double)(width*height);
+	return ans/(width*height);
     }
 
 	
@@ -47,7 +47,22 @@ public class ImageProcessing{
 	ImageIO.write(image,"jpg",dest);
     }
 
+
+    public static void grayscaletoblurryimage(String destination, int[][] input) throws IOException{
+	BufferedImage image = new BufferedImage(input.length,input[0].length,1);
+	for(int x = 0;x<input.length - 10;x++){
+	    for(int y=0;y<input[x].length - 10;y++){
+		input[x][y] = average(input,1,1,x,y);
+		Color c  = new Color(input[x][y],input[x][y],input[x][y]);
+		image.setRGB(x,y,c.getRGB());
+	    }
+	}
+	File dest = new File(destination);
+	ImageIO.write(image,"jpg",dest);
+    }
+
     public static void main(String[] args) throws IOException{
-	grayscaletoimage("grascale.jpg", convertToGrayscale("Fate.zero.full.1072802.jpg"));
+	grayscaletoblurryimage("grascale.jpg", convertToGrayscale("Fate.zero.full.1072802.jpg"));
+	
     }
 }
