@@ -22,6 +22,18 @@ public class ImageProcessing{
 	}
 	return ans;
     }
+
+
+    public double average(int[][] grayscale,int width, int height,int x,int y){// returns the average grayscale of a widthxheight at x,y
+	double ans = 0.0;
+	for(int i = 0;i<width;i++){
+	    for(int t = 0; i<height;t++){
+		ans += grayscale[i+x][t+y];
+	    }
+	}
+	return ans/(double)(width*height);
+    }
+
 	
     public static void grayscaletoimage(String destination, int[][] input) throws IOException{
 	BufferedImage image = new BufferedImage(input.length,input[0].length,1);
