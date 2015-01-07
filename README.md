@@ -12,3 +12,8 @@ Potential features to be added in the future are:
   GIF input support
   GIF output support
   
+=========
+Progress logs:
+  - December 30th - some very rudimentary, conceptual pseudocode that's not even really psuedocode. Just highlighing essential        tasks necessary to be accomplished
+  - January 5th - Got working essential grayscale algorithm for turning colorimages into grayscale
+  - January 6th - Started working on a divide picture and get average of each "block" in image algorithms
