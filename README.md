@@ -13,6 +13,28 @@ Potential features to be added in the future are:
   GIF output support
   
 =========
+Project Structure:
+
+Essential Classes and Objects:
+  - An object class which would be the image/picture that we want to convert to ASCII grayscale. Would contain all the methods to return a grayscale ASCII
+  - An object class for the colored ASCII image
+  - A static class which would contain useful methods, like splitting the image into specific blocks with average value, converting to grayscale, etc..
+  - A main class for running the program
+
+=========
+How project runtime should go:
+
+- The user runs the program
+- The program displays splash and whatever other goodies
+- Asks whether if they would like to convert an image, gif, etc., or exit the program
+- Allows user to navigate directories to find the image they would like to convert
+- Asks for image specifics, i.e resolution of ASCII images, color or black and white
+- Shows the user the converted image
+- Asks whether user would like to put image into a jpeg, text file, etc..
+- Asks whether user would like to exit or convert another image
+- Perhaps allow for conversion of multiple images..
+  
+=========
 Progress logs:
   - December 30th - some very rudimentary, conceptual pseudocode that's not even really psuedocode. Just highlighing essential        tasks necessary to be accomplished
   - January 5th - Got working essential grayscale algorithm for turning colorimages into grayscale
