@@ -39,4 +39,4 @@ Progress logs:
   - December 30th - some very rudimentary, conceptual pseudocode that's not even really psuedocode. Just highlighing essential        tasks necessary to be accomplished
   - January 5th - Got working essential grayscale algorithm for turning colorimages into grayscale
   - January 6th - Started working on a divide picture and get average of each "block" in image algorithms
-  - January 7th - Determined detailed structure, workings, composition and orders of program and algorithms and outlined in README
+  - January 7th - Determined detailed structure, workings, composition and orders of program and algorithms and outlined in README. Continued to try figuring out how to get block average conversion algorithm to work, which isn't yet..
