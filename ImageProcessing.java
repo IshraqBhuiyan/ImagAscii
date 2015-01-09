@@ -34,7 +34,7 @@ public final class ImageProcessing{
 	return ans/(width*height);
     }
 
-	public static int[][] blackBreak(int[][] grayscale, int scale){
+	public static int[][] blockBreak(int[][] grayscale, int scale){
 		int yscale = scale*2;
 		int width = grayscale.length/scale;
 		int height = grayscale[0].length/yscale;
@@ -46,6 +46,15 @@ public final class ImageProcessing{
 		}
 		return ans;
 	}
+
+    public static String grayToChar(int val){
+	String scale = " .:-*\=±½©®æ¥Æ#";
+	return ""+scale.charAt(255/(255/val));
+    }
+
+    public static String imageToAscii(String filename,int scale){
+	
+    }
 
 	//Test function thingies and potatoes below, enjoy
 
