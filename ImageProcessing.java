@@ -34,26 +34,37 @@ public final class ImageProcessing{
 	return ans/(width*height);
     }
 
-	public static int[][] blockBreak(int[][] grayscale, int scale){
-		int yscale = scale*2;
-		int width = grayscale.length/scale;
-		int height = grayscale[0].length/yscale;
-		int[][] ans = new int[width][height];
-		for(int x = 0;x<width;x++){
-			for(int y=0;y<height;y++){
-				ans[x][y] = average(grayscale,scale,yscale,x*width,y*height);	
-			}
-		}
-		return ans;
-	}
+    public static int[][] blockBreak(int[][] grayscale, int scale){
+	int yscale =(scale*3) / 2;// (2*scale)/3;
+	int width = grayscale.length/scale;
+	int height = grayscale[0].length/yscale;
+	int[][] ans = new int[height][width];
+	for(int x = 0;x<width;x++){
+	    for(int y=0;y<height;y++){
+		//System.out.println("" + x*width + " " + y*height);
+		ans[y][x] = average(grayscale,scale,yscale,x*scale,y*yscale);	
+	    }
 
-    public static String grayToChar(int val){
-	String scale = " .:-*\=±½©®æ¥Æ#";
-	return ""+scale.charAt(255/(255/val));
+	}
+	return ans;
     }
 
-    public static String imageToAscii(String filename,int scale){
-	
+    public static String grayToChar(int val){
+	String scale = " .:-*\\=±½©®æ¥Æ#";
+	return ""+scale.charAt(14-(14/(255/(val+1))));
+    }
+
+    public static String imageToAscii(String filename,int scale)throws IOException{
+	int[][] grayscale = convertToGrayscale(filename);
+	int[][] breakup = blockBreak(grayscale,scale);
+	String ans = "";
+	for(int x = 0;x<breakup.length;x++){
+	    for(int y = 0;y<breakup[0].length;y++){
+		ans += grayToChar(breakup[x][y]);
+	    }
+	    ans += "\n";
+	}
+	return ans;
     }
 
 	//Test function thingies and potatoes below, enjoy
@@ -86,7 +97,7 @@ public final class ImageProcessing{
     }
 
     public static void main(String[] args) throws IOException{
-	grayscaletoblurryimage("grascale.jpg", convertToGrayscale("Fate.zero.full.1072802.jpg"));
-	
+	//	grayscaletoblurryimage("grascale.jpg", convertToGrayscale("Fate.zero.full.1072802.jpg"));
+	System.out.println(imageToAscii("Fate.zero.full.1072802.jpg",10));
     }
 }
