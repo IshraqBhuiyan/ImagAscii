@@ -42,3 +42,4 @@ Progress logs:
   - January 7th - Determined detailed structure, workings, composition and orders of program and algorithms and outlined in README. Continued to try figuring out how to get block average conversion algorithm to work, which isn't yet..
   - January 8th - Finished testing the averaging grayscale function and began writing the function that divides an array into blocks.
   - January 9th - Finished the basic version of grayscale ascii art - YAY
+  - January 10th - Made the object class to hold image, and other essential classes..
