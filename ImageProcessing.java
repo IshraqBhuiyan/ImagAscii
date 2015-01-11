@@ -56,7 +56,7 @@ public final class ImageProcessing{
 	
 	//	for
     }
-
+ 
     public static String imageToAscii(String filename,int scale)throws IOException{
 	int[][] grayscale = convertToGrayscale(filename);
 	int[][] breakup = blockBreak(grayscale,scale);
