@@ -43,3 +43,4 @@ Progress logs:
   - January 8th - Finished testing the averaging grayscale function and began writing the function that divides an array into blocks.
   - January 9th - Finished the basic version of grayscale ascii art - YAY
   - January 10th - Made the object class to hold image, and other essential classes..
+  - January 11th - Attended Robotics competition at Francis Lewis HS, so nothing today, as of yet....
