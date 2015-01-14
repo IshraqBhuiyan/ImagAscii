@@ -44,3 +44,5 @@ Progress logs:
   - January 9th - Finished the basic version of grayscale ascii art - YAY
   - January 10th - Made the object class to hold image, and other essential classes..
   - January 11th - Attended Robotics competition at Francis Lewis HS, so nothing today, as of yet....
+  - January 12th - Started organizing project into non-testing, final organization and configuration, and also worked on methods for converting RGB to appropriate Hex format for implementation of Colored Ascii art
+  - January 13th - Began working on reading gif images so that they can be converted to ascii animations and also started working on user program interface, which will include options for a guided walkthrough for user or just using appropriate flags if user knows how to use the program.
