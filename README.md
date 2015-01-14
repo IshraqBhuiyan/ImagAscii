@@ -36,24 +36,24 @@ How project runtime should go:
   
 =========
 Progress logs:
-  - December 30th - some very rudimentary, conceptual pseudocode that's not even really psuedocode. Just highlighing essential        tasks necessary to be accomplished
-  - January 5th - Got working essential grayscale algorithm for turning colorimages into grayscale
-  - January 6th - Started working on a divide picture and get average of each "block" in image algorithms
-  - January 7th - Determined detailed structure, workings, composition and orders of program and algorithms and outlined in README. Continued to try figuring out how to get block average conversion algorithm to work, which isn't yet..
-  - January 8th - Finished testing the averaging grayscale function and began writing the function that divides an array into blocks.
-  - January 9th - Finished the basic version of grayscale ascii art - YAY
-  - January 10th - Made the object class to hold image, and other essential classes..
-  - January 11th - Attended Robotics competition at Francis Lewis HS, so nothing today, as of yet....
-  - January 12th - Started organizing project into non-testing, final organization and configuration, and also worked on methods for converting RGB to appropriate Hex format for implementation of Colored Ascii art
-  - January 13th - Began working on reading gif images so that they can be converted to ascii animations and also started working on user program interface, which will include options for a guided walkthrough for user or just using appropriate flags if user knows how to use the program.
-  - 
+   - December 30th - some very rudimentary, conceptual pseudocode that's not even really psuedocode. Just highlighing essential        tasks necessary to be accomplished
+   - January 5th - Got working essential grayscale algorithm for turning colorimages into grayscale
+   - January 6th - Started working on a divide picture and get average of each "block" in image algorithms
+   - January 7th - Determined detailed structure, workings, composition and orders of program and algorithms and outlined in README. Continued to try figuring out how to get block average conversion algorithm to work, which isn't yet..
+   - January 8th - Finished testing the averaging grayscale function and began writing the function that divides an array into blocks.
+   - January 9th - Finished the basic version of grayscale ascii art - YAY
+   - January 10th - Made the object class to hold image, and other essential classes..
+   - January 11th - Attended Robotics competition at Francis Lewis HS, so nothing today, as of yet....
+   - January 12th - Started organizing project into non-testing, final organization and configuration, and also worked on methods for converting RGB to appropriate Hex format for implementation of Colored Ascii art
+   - January 13th - Began working on reading gif images so that they can be converted to ascii animations and also started working on user program interface, which will include options for a guided walkthrough for user or just using appropriate flags if user knows how to use the program.
+   - 
   
 =========
 To Do List:
    - Determine ranges for Ascii character chart
    - Gif input processing
    - Reworking Image Input Processing to work more fluidly with gifs
-   - Image Output processing needs to be implemented
+   - Image Output Processing needs to be implemented
    - Giving color to Ascii images
    - Should we perhaps scale output image sizes using font sizes, or nahh?
    - Command line user interface needs to be finished
