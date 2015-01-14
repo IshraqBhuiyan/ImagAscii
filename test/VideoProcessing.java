@@ -3,10 +3,9 @@ import java.awt.image.*;
 import java.io.*;
 import javax.imageio.*;
 import javax.swing.JFrame;
-import javax.imageio.plugins.*;
 public class VideoProcessing{
 
-    public BufferedImage[] GIFtoFrames(String fileLocation) throws IOException{
+    public BufferedImage[] OldGIFtoFrames(String fileLocation) throws IOException{
         File gif = new File(fileLocation);
 	ImageReader reader = new GIFImageReader(new GIFImageReaderSpi());
 	//	ImageReader reader = new GIFImageReader(new GIFImageReaderSpi());
@@ -18,4 +17,8 @@ public class VideoProcessing{
         return ans;
     }
 
+    public BufferedImage[] GifReader(String fileLocation) throws IOException{
+	File gif = new File(fileLocation);
+	BufferedImage image = ImageIO.read(gif);
+	
 }

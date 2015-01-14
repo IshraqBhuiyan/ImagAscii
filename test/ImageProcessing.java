@@ -49,6 +49,33 @@ public final class ImageProcessing{
 	return ans;
     }
 
+    public static int[][] BreakBlock(int[][] grayscale, int scale){ //takes an array of grayscale pixels and then using a relative scale from 1 to 10, where 1 has the highest
+	                                                            //resolution, breaks the image into block
+	int blockWidth = (grayscale[0].length/4) * scale;
+	int blockHeight = (grayscale.length/8)*scale;
+	int yBlocks = grayscale.length/blockHeight;
+	if(grayscale.length % blockHeight != 0) yBlocks++;
+	int xBlocks = grayscale[].length/blockWidth;
+	if(grayscale[0].length % blockWidth != 0) xBlocks++;
+	int[][] Blocks = new int[yBlocks][xBlocks];
+	for(int i=0; i<yBlocks; i++){
+	    for(int j=0;j<xBlocks;j++){
+		if(i==yBlocks){
+		    if(j==xBlocks){
+			Blocks[i][j] = average(grayscale,grayscale[i].length % blockWidth, grayscale.length % blockHeight, j*BlockWidth, i*blockHeight);
+		    }else{
+			Blocks[i][j] = average(grayscale, blockWidth, grayscale.length % blockHeight, j*BlockWidth, i*blockHeight);
+		    }
+		}else if(j==xBlocks){
+		    Blocks[i][j] = average(grayscale, grayscale[i].length % blockWidth, blockHeight, j*blockWidth, i*blockHeight);
+		}else{
+		    Blocks[i][j] = average(grayscale, blockWidth, blockHeight, j*blockWidth, i*blockHeight);
+		}
+	    }
+	}
+	return Blocks;
+    }
+    
     public static String grayToChar(int val){
 	String scale = " .:-*\\=±½©®æ¥Æ#";
 	return ""+scale.charAt(14-(14/(255/(val+1))));
