@@ -49,10 +49,10 @@ public final class ImageProcessing{
 	return ans;
     }
 
-    public static int[][] BreakBlock(int[][] grayscale, int scale){ //takes an array of grayscale pixels and then using a relative scale from 1 to 10, where 1 has the highest
-	                                                            //resolution, breaks the image into block
-	int blockWidth = (grayscale[0].length/4) * scale;
-	int blockHeight = (grayscale.length/8)*scale;
+    public static int[][] BreakBlock(int[][] grayscale, int scale){ //takes an array of grayscale pixels and then using a relative scale from 1 to 10, where 1 has the lowest
+	                                                            //block density, breaks the image into block
+	int blockWidth = grayscale[0].length/(80 * scale);
+	int blockHeight = grayscale.length/(40*scale);
 	int yBlocks = grayscale.length/blockHeight;
 	if(grayscale.length % blockHeight != 0) yBlocks++;
 	int xBlocks = grayscale[].length/blockWidth;
