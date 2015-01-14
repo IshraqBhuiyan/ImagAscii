@@ -46,3 +46,15 @@ Progress logs:
   - January 11th - Attended Robotics competition at Francis Lewis HS, so nothing today, as of yet....
   - January 12th - Started organizing project into non-testing, final organization and configuration, and also worked on methods for converting RGB to appropriate Hex format for implementation of Colored Ascii art
   - January 13th - Began working on reading gif images so that they can be converted to ascii animations and also started working on user program interface, which will include options for a guided walkthrough for user or just using appropriate flags if user knows how to use the program.
+  - 
+  
+=========
+To Do List:
+   - Determine ranges for Ascii character chart
+   - Gif input processing
+   - Reworking Image Input Processing to work more fluidly with gifs
+   - Image Output processing needs to be implemented
+   - Giving color to Ascii images
+   - Should we perhaps scale output image sizes using font sizes, or nahh?
+   - Command line user interface needs to be finished
+   - Let's make a logo/Splash!
