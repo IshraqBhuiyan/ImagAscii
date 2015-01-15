@@ -1,16 +1,18 @@
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import javax.imageio.ImageIO;
+import javax.swing.JFrame;
 import java.util.Scanner;
 public class  Drive{
-    public static void main(String[]args){
-	String image,input;
+    public static void main(String[]args) throws IOException{
+	String input;
 	String outtxt = "noout";
 	String outimg = "noout";
 	boolean color = true;
 	boolean tutorial = args.length==0;
 	
 
-	if(!tutorial){
-	    input = ars[0];
-	}
 	for(int i=1;i<args.length;i++){
 	    //		if(args[0] == "--help" || args[0] == "-h"){
 
@@ -50,20 +52,21 @@ public class  Drive{
 		color = args[i].equals("--color");
 	    }
 	}
-	//Begin Tutorial
-	if(tutorial){
-	    Scanner reader = new Scanner(System.input);
+	if(!tutorial){
+	    input = args[0];
+	}else{//  Begin Tutorial
+	    Scanner reader = new Scanner(System.in);
 	    System.out.println("Welcome to the Swagscii tutorial! Please enter the name of the image you would like to conver to ASCII art");
-	    image = reader.nextLine();
+	    input = reader.nextLine();
 	    System.out.println("Would you like your image to be returned in color? Y/n");
-	    color = reader.nextLine().StringToLowerCase().equals("y");
+	    color = reader.nextLine().toLowerCase().equals("y");
 	    System.out.println("Would you like to out put your ASCII art to a text file?");
-	    if(reader.nextLine().StringToLowerCase().equals("y")){
+	    if(reader.nextLine().toLowerCase().equals("y")){
 		System.out.println("please enter a name for the output file");
 		outtxt = reader.nextLine();
 	    }
 	    System.out.println("Would you like to out put your ASCII art to an image file?");
-	    if(reader.nextLine().StringToLowerCase().equals("y")){
+	    if(reader.nextLine().toLowerCase().equals("y")){
 		System.out.println("please enter a name for the output file");
 		outimg = reader.nextLine();
 	    }
@@ -72,6 +75,7 @@ public class  Drive{
 	 
 	//Begin doing stuff with the parameters gathered	
 
-
+	//	System.out.println(ImageProcessing.imageToAscii(input,3));
+	System.out.println(input,color,outimg,outtxt,tutorial);
     }
 }
