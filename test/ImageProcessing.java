@@ -84,22 +84,45 @@ public final class ImageProcessing{
 	//	for
     }
  
-    public static String imageToAscii(String filename,int scale)throws IOException{
+    public static String[] imageToAscii(String filename,int scale)throws IOException{ // returns an array of lines of ASCII art
 	int[][] grayscale = convertToGrayscale(filename);
 	int[][] breakup = blockBreak(grayscale,scale);
-	String ans = "";
+	String[] ans = ""; 
 	for(int x = 0;x<breakup.length;x++){
 	    for(int y = 0;y<breakup[0].length;y++){
-		ans += grayToChar(breakup[x][y]);
+		ans[x] += grayToChar(breakup[x][y]);
 	    }
-	    ans += "\n";
 	}
 	return ans;
     }
-
-	//Test function thingies and potatoes below, enjoy
-
-
+    
+    public static BufferedImage buildImage(String[] art,w,h,int[][][] colors){//colors contains the colors of an image formatted as [x][y][0-2] 0-2 returning red green or blue
+	int width = w*art[0].length();
+	int height = h*art.length;
+	BufferedImage output = new  BufferedImage(width,height,"png");
+	for( int blockx=0;blockx<art[0].length();blockx++){
+	    int firstx = blockx*w;
+	    for(int blocky=0;blocky<art.length;blocky++){
+		int firsty = block*h;
+		bool[][] cmap = charMap.get(art[blocky].charAt(blockx));//stores a boolean based map of the ascii character you're drawing
+		for(int x = 0;x<w;x++){
+		    for(int y =0;y<h;y++){
+			Color c = new Color(255,255,255);
+			if(cmap[x][y]){
+			    c.setRed(colors[blockx][blocky][0];
+			    c.setGreen(colors[blockx][blocky][1];
+			    c.setBlue(colors[blockx][blocky][2];
+			}
+		    }
+		}
+	    }
+	}
+	
+    }
+    
+    //Test function thingies and potatoes below, enjoy
+    
+    
     public static void grayscaletoimage(String destination, int[][] input) throws IOException{
 	BufferedImage image = new BufferedImage(input.length,input[0].length,1);
 	for(int x = 0;x<input.length;x++){
@@ -125,7 +148,7 @@ public final class ImageProcessing{
 	File dest = new File(destination);
 	ImageIO.write(image,"jpg",dest);
     }
-
+    
     public static void main(String[] args) throws IOException{
 	//	grayscaletoblurryimage("grascale.jpg", convertToGrayscale("Fate.zero.full.1072802.jpg"));
 	System.out.println(imageToAscii("gray.jpg",10));
