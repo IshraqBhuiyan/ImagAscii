@@ -59,4 +59,5 @@ To Do List:
    - Should we perhaps scale output image sizes using font sizes, or nahh?
    - Command line user interface needs to be finished
    - Let's make a logo/Splash!
-   - Write breakblock for colored images(can't we just have a boolean parameter in our current breakblock which when true will do grayscale conversion, and when not, will just normally average without conversion, easy peasy)
+   - Write breakblock for colored images(can't we just have a boolean parameter in our current breakblock which when true will do grayscale conversion, and when not, will just normally average without conversion, easy peasy)(Also, we essentially just need to write a universal average function)
+   - Write a function for getting rgb from the binary data of normal buffered image getRGB function and then functions for averaging the red, the green and the blue and then returning one rgb with the average of all three
