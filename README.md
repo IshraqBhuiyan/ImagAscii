@@ -47,7 +47,7 @@ Progress logs:
    - January 12th - Started organizing project into non-testing, final organization and configuration, and also worked on methods for converting RGB to appropriate Hex format for implementation of Colored Ascii art
    - January 13th - Began working on reading gif images so that they can be converted to ascii animations and also started working on user program interface, which will include options for a guided walkthrough for user or just using appropriate flags if user knows how to use the program.
    - January 14th - Continue working on main program interface and continue working on reading gif files and other image types in a better manner using ImageReader and ImageIO and other cool things.
-   - January 15th - Began writing image outputting and realized that we have a lot of work left to do
+   - January 15th - Began writing image outputting and realized that we have a lot of work left to do. Also finished gif reading and started gif writing from an arraylist of bufferedImages.
   
 =========
 To Do List:
@@ -59,4 +59,4 @@ To Do List:
    - Should we perhaps scale output image sizes using font sizes, or nahh?
    - Command line user interface needs to be finished
    - Let's make a logo/Splash!
-   - Write breakblock for colored images
+   - Write breakblock for colored images(can't we just have a boolean parameter in our current breakblock which when true will do grayscale conversion, and when not, will just normally average without conversion, easy peasy)
