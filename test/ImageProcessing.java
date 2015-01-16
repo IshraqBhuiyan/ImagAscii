@@ -55,16 +55,16 @@ public final class ImageProcessing{
 	int blockHeight = grayscale.length/(40*scale);
 	int yBlocks = grayscale.length/blockHeight;
 	if(grayscale.length % blockHeight != 0) yBlocks++;
-	int xBlocks = grayscale[].length/blockWidth;
+	int xBlocks = grayscale[0].length/blockWidth;
 	if(grayscale[0].length % blockWidth != 0) xBlocks++;
 	int[][] Blocks = new int[yBlocks][xBlocks];
 	for(int i=0; i<yBlocks; i++){
 	    for(int j=0;j<xBlocks;j++){
 		if(i==yBlocks){
 		    if(j==xBlocks){
-			Blocks[i][j] = average(grayscale,grayscale[i].length % blockWidth, grayscale.length % blockHeight, j*BlockWidth, i*blockHeight);
+			Blocks[i][j] = average(grayscale,grayscale[i].length % blockWidth, grayscale.length % blockHeight, j*blockWidth, i*blockHeight);
 		    }else{
-			Blocks[i][j] = average(grayscale, blockWidth, grayscale.length % blockHeight, j*BlockWidth, i*blockHeight);
+			Blocks[i][j] = average(grayscale, blockWidth, grayscale.length % blockHeight, j*blockWidth, i*blockHeight);
 		    }
 		}else if(j==xBlocks){
 		    Blocks[i][j] = average(grayscale, grayscale[i].length % blockWidth, blockHeight, j*blockWidth, i*blockHeight);
@@ -86,8 +86,8 @@ public final class ImageProcessing{
  
     public static String[] imageToAscii(String filename,int scale)throws IOException{ // returns an array of lines of ASCII art
 	int[][] grayscale = convertToGrayscale(filename);
-	int[][] breakup = blockBreak(grayscale,scale);
-	String[] ans = ""; 
+	int[][] breakup = BreakBlock(grayscale,scale);
+	String[] ans = new String[breakup.length]; 
 	for(int x = 0;x<breakup.length;x++){
 	    for(int y = 0;y<breakup[0].length;y++){
 		ans[x] += grayToChar(breakup[x][y]);
@@ -95,7 +95,8 @@ public final class ImageProcessing{
 	}
 	return ans;
     }
-    
+
+    /*
     public static BufferedImage buildImage(String[] art,w,h,int[][][] colors){//colors contains the colors of an image formatted as [x][y][0-2] 0-2 returning red green or blue
 	int width = w*art[0].length();
 	int height = h*art.length;
@@ -120,6 +121,7 @@ public final class ImageProcessing{
 	
     }
     
+    */
     //Test function thingies and potatoes below, enjoy
     
     
