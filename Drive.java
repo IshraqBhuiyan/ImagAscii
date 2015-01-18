@@ -72,10 +72,15 @@ public class  Drive{
 	    }
 	    System.out.println("Processing image...");
 	}	
-	 
+	File rawimage = new File(input);
+	BufferedImage image = ImageIO.read(rawimage);
+	int Iheight = image.getHeight();
+	int Iwidth = image.getWidth();
 	//Begin doing stuff with the parameters gathered	
 
-	//	System.out.println(ImageProcessing.imageToAscii(input,3));
-	System.out.println(input,color,outimg,outtxt,tutorial);
-    }
+	SwagWindow output = new SwagWindow(input,ImageProcessing.imageToAscii(input,3),Iwidth,Iheight,2);
+	output.pack();
+	output.setVisible(true);
+    //System.out.println(input,color,outimg,outtxt,tutorial);
+}
 }

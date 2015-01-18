@@ -35,7 +35,7 @@ public final class ImageProcessing{
     }
 
     public static int[][] blockBreak(int[][] grayscale, int scale){
-	int yscale =(scale*3) / 2;// (2*scale)/3;
+	int yscale =scale/3; //(scale*3) / 2;// (2*scale)/3;
 	int width = grayscale.length/scale;
 	int height = grayscale[0].length/yscale;
 	int[][] ans = new int[height][width];
@@ -84,14 +84,15 @@ public final class ImageProcessing{
 	//	for
     }
  
-    public static String[] imageToAscii(String filename,int scale)throws IOException{ // returns an array of lines of ASCII art
+    public static String imageToAscii(String filename,int scale)throws IOException{ // returns an array of lines of ASCII art
 	int[][] grayscale = convertToGrayscale(filename);
-	int[][] breakup = BreakBlock(grayscale,scale);
+	int[][] breakup = blockBreak(grayscale,scale)//BreakBlock(grayscale,scale);
 	String[] ans = new String[breakup.length]; 
 	for(int x = 0;x<breakup.length;x++){
 	    for(int y = 0;y<breakup[0].length;y++){
-		ans[x] += grayToChar(breakup[x][y]);
+		ans += grayToChar(breakup[x][y][0]);
 	    }
+	    ans+= "\n";
 	}
 	return ans;
     }

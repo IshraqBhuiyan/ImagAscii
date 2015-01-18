@@ -1,0 +1,18 @@
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import javax.imageio.ImageIO;
+import javax.swing.JFrame;
+public class VideoProcessing{
+
+    public BufferedImage[] GIFtoFrames(File gif) throws IOException{
+        ImageReader reader = new GIFImageReader(new GIFImageReaderSpi());
+        reader.setInput(ImageIO.createImageInputStream(gif));
+        BufferedImage[] ans = new BufferedImage[reader.getNumImages(true)];
+        for(int i=0;i<reader.getNumImages(true);i++){
+            ans[i] = reader.read(i);
+        }
+        return ans;
+    }
+
+}
