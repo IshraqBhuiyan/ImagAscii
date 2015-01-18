@@ -153,6 +153,6 @@ public final class ImageProcessing{
     
     public static void main(String[] args) throws IOException{
 	//	grayscaletoblurryimage("grascale.jpg", convertToGrayscale("Fate.zero.full.1072802.jpg"));
-	System.out.println(imageToAscii("gray.jpg",10));
+	System.out.println(imageToAscii("Fate.zero.full.1072802.jpg",5));
     }
 }
