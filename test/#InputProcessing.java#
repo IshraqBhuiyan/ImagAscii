@@ -8,9 +8,10 @@ import java.io.File;
 import java.util.Iterator;
 import javax.imageio.ImageWriter;
 import javax.imageio.stream.ImageOutputStream;
+import javax.imageio.stream.FileImageOutputStream;
 public final class InputProcessing{
 
-    public static ArrayList<BufferedImage> getImage(String url) throws IOException{
+    public static ArrayList<BufferedImage> getImage(String url, int frameTime) throws IOException{
 	ArrayList<BufferedImage> inStream = new ArrayList<BufferedImage>; //if number of elements in inStream > 1, then it is a gif, elsewise it is a single image
 	ImageReader image = ImageIO.read(new URL(url));
 	try{
@@ -28,8 +29,10 @@ public final class InputProcessing{
 	
     public static void writeGif(String output, ArrayList<BufferedImage> gifSequence){
 	File file = new File(output);
-	Iterator ImageWriters = ImageIO.getImageWritersByFormatName("GIF");
-	ImageWriter image
+	//Iterator ImageWriters = ImageIO.getImageWritersByFormatName("GIF");
+	//ImageWriter Writer = null;
+	ImageOutputStream output = new FileImageOutputProcessing(file);
+	GifSequenceWriter
     }
 
 
