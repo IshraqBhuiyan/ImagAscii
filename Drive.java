@@ -63,7 +63,7 @@ public class  Drive{
 	    color = reader.nextLine().toLowerCase().equals("y");
 	    System.out.println("Would you like to out put your ASCII art to a text file? Y/n");
 	    if(reader.nextLine().toLowerCase().equals("y")){
-		System.out.println("please enter a name for the output file");
+		System.out.println("please enter a name for the output file, without any file extensions");
 		outtxt = reader.nextLine();
 	    }
 	    System.out.println("Would you like to out put your ASCII art to an image file? Y/n");
@@ -100,9 +100,11 @@ public class  Drive{
 	output.pack();
 	output.setVisible(true);
 	Thread.sleep(1000);
-	BufferedImage outputIMG = takeScreenshot(output);
-	ImageIO.write(outputIMG, "png", new File(outimg + ".png"));
-    //System.out.println(input,color,outimg,outtxt,tutorial);
+	if(!(outimg.equals("noout"))){
+	    BufferedImage outputIMG = takeScreenshot(output);
+	    ImageIO.write(outputIMG, "png", new File(outimg + ".png"));
+	}
+	//System.out.println(input,color,outimg,outtxt,tutorial);
 }
     public static BufferedImage takeScreenshot(JFrame argFrame){
 	Rectangle rec = argFrame.getBounds();
