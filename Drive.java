@@ -10,6 +10,8 @@ public class  Drive{
 	String input;
 	String outtxt = "noout";
 	String outimg = "noout";
+	int fsize = 3;
+	int res = 3;
 	boolean color = true;
 	boolean tutorial = args.length==0;
 	
@@ -24,7 +26,9 @@ public class  Drive{
 				   "  -h, --help           See usage\n"+      
 				   "  --color              Add color to output(feature pending)\n"+
 				   "  --output [filename]  Save output to filename.txt\n"+
-				   "  --save [filename]    Save output to filename.png\n");	
+				   "  --save [filename]    Save output to filename.png\n"+
+				   "  --size [fonstsize]   Set output font size to fontsize"+
+				   "  --res [scale]        Set each character to be scale input pixels long");	
 
 	    }else if(args[i].equals("--output")){
 		try{
@@ -48,7 +52,29 @@ public class  Drive{
 		} catch(IndexOutOfBoundsException e){
 		    System.out.println("ERROR: No output file given");
 		}
-		    
+	    }else if(args[i].equals("--res")){
+		try{
+		    if(!(args[i+1].charAt(0) == '-')){
+			i++;
+			res = Integer.parseInt(args[i]);
+		    }else{	
+			System.out.println("ERROR: No valid resolution given");
+		    }
+		} catch(IndexOutOfBoundsException e){
+		    System.out.println("ERROR: No valid resolution given");
+		}
+	    }else if(args[i].equals("--size")){
+		try{
+		    if(!(args[i+1].charAt(0) == '-')){
+			i++;
+			fsize = Integer.parseInt(args[i]);
+		    }else{	
+			System.out.println("ERROR: No valid size given");
+		    }
+		} catch(IndexOutOfBoundsException e){
+		    System.out.println("ERROR: No valid size given");
+		}
+
 	    }else{
 		color = args[i].equals("--color");
 	    }
@@ -79,7 +105,7 @@ public class  Drive{
 	int Iwidth = image.getWidth();
 	//Begin doing stuff with the parameters gathered
 	System.out.println("begin processing");
-	String text = ImageProcessing.imageToAscii(input,3);
+	String text = ImageProcessing.imageToAscii(input,res);
 
 	//String[] splitText = ImageProcessing.imageToAsciiArray(input, 3);;
 	//System.out.println("begin rendering");
@@ -96,7 +122,7 @@ public class  Drive{
 	}
 
 	//System.out.println("begin jframing");
-	SwagWindow output = new SwagWindow(input,text,Iwidth,Iheight,2);
+	SwagWindow output = new SwagWindow(input,text,Iwidth,Iheight,fsize);
 	output.pack();
 	output.setVisible(true);
 	Thread.sleep(1000);
