@@ -85,17 +85,17 @@ public class  Drive{
 	//System.out.println("begin rendering");
 	//BufferedImage renderIMG = ImageOutput.renderTextToImage(splitText);
 	//ImageIO.write(renderIMG, "png", new File(outimg + ".png"));
-	String[] splitText = ImageProcessing.imageToAsciiArray(input, 3);;
-	System.out.println("begin rendering");
-	BufferedImage renderIMG = ImageOutput.renderTextToImage(splitText);
-	ImageIO.write(renderIMG, "png", new File(outimg + ".png"));
+	//String[] splitText = ImageProcessing.imageToAsciiArray(input, 3);;
+	//System.out.println("begin rendering");
+	//BufferedImage renderIMG = ImageOutput.renderTextToImage(splitText);
+	//ImageIO.write(renderIMG, "png", new File(outimg + ".png"));
 	if(!(outtxt.equals("noout"))){
 	    PrintWriter txtfile = new PrintWriter(outtxt+".txt");
 	    txtfile.println(text);
 	    txtfile.close();
 	}
 
-	System.out.println("begin jframing");
+	//System.out.println("begin jframing");
 	SwagWindow output = new SwagWindow(input,text,Iwidth,Iheight,2);
 	output.pack();
 	output.setVisible(true);
