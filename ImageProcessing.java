@@ -77,8 +77,8 @@ public final class ImageProcessing{
     }
     
     public static String grayToChar(int val){
-	String scale = " .:-*\\=±½©®æ¥Æ#";
-	return ""+scale.charAt(14-(14/(255/(val+1))));
+	String scale = " .......:::::::---*///\\===±±±½®æ#¥Æ";
+	return ""+scale.charAt(34-(34/(255/(val+1))));
 	//int index  = 0;
 	
 	//	for
