@@ -58,8 +58,8 @@ public class  Drive{
 	    Scanner reader = new Scanner(System.in);
 	    System.out.println("Welcome to the Swagscii tutorial! Please enter the name of the image you would like to conver to ASCII art");
 	    input = reader.nextLine();
-	    System.out.println("Would you like your image to be returned in color? Y/n");
-	    color = reader.nextLine().toLowerCase().equals("y");
+	    //System.out.println("Would you like your image to be returned in color? Y/n");
+	    //color = reader.nextLine().toLowerCase().equals("y");
 	    System.out.println("Would you like to out put your ASCII art to a text file?");
 	    if(reader.nextLine().toLowerCase().equals("y")){
 		System.out.println("please enter a name for the output file");
@@ -67,7 +67,7 @@ public class  Drive{
 	    }
 	    System.out.println("Would you like to out put your ASCII art to an image file?");
 	    if(reader.nextLine().toLowerCase().equals("y")){
-		System.out.println("please enter a name for the output file");
+		System.out.println("please enter a name for the output file, without any file extensions");
 		outimg = reader.nextLine();
 	    }
 	    System.out.println("Processing image...");
@@ -76,9 +76,15 @@ public class  Drive{
 	BufferedImage image = ImageIO.read(rawimage);
 	int Iheight = image.getHeight();
 	int Iwidth = image.getWidth();
-	//Begin doing stuff with the parameters gathered	
-
-	SwagWindow output = new SwagWindow(input,ImageProcessing.imageToAscii(input,3),Iwidth,Iheight,2);
+	//Begin doing stuff with the parameters gathered
+	System.out.println("begin processing");
+	String text = ImageProcessing.imageToAscii(input,3);
+	String[] splitText = ImageProcessing.imageToAsciiArray(input, 3);;
+	System.out.println("begin rendering");
+	BufferedImage renderIMG = ImageOutput.renderTextToImage(splitText);
+	ImageIO.write(renderIMG, "png", new File(outimg + ".png"));
+	System.out.println("begin jframing");
+	SwagWindow output = new SwagWindow(input,text,Iwidth,Iheight,2);
 	output.pack();
 	output.setVisible(true);
     //System.out.println(input,color,outimg,outtxt,tutorial);

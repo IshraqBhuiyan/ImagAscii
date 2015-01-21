@@ -99,6 +99,24 @@ public final class ImageProcessing{
 	return ans;
     }
 
+    public static String[] imageToAsciiArray(String filename,int scale)throws IOException{ // returns an array of lines of ASCII art
+	int[][] grayscale = convertToGrayscale(filename);
+	int[][] breakup = blockBreak(grayscale,scale);//BreakBlock(grayscale,scale);
+	//      System.out.println(breakup);
+	String[] ans = new String[breakup.length];
+	for(int x = 0;x<breakup.length;x++){
+	    String temp = "";
+	    for(int y = 0;y<breakup[0].length;y++){
+		//              System.out.println(grayToChar(breakup[x][y]));
+		temp += grayToChar(breakup[x][y]);
+	    }
+	    ans[x] = temp;
+	}
+	return ans;
+    }
+    
+
+
     /*
     public static BufferedImage buildImage(String[] art,w,h,int[][][] colors){//colors contains the colors of an image formatted as [x][y][0-2] 0-2 returning red green or blue
 	int width = w*art[0].length();
