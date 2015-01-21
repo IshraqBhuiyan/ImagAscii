@@ -1,6 +1,7 @@
 SwagScii
 =========
-Swagscii is a program with a GUI output, as well as file output that allows users to choose image files and convert them into ASCII art
+Swagscii is a program with a GUI output, as well as file output that allows users to choose image files and convert them into ASCII art.
+
 Program currently outputs .png for image files and .txt for text files.
 
 To Run The Program: 
