@@ -21,8 +21,8 @@ public class  Drive{
 		System.out.println("Usage:\n  Drive         Guided tutorial mode\n"+
 				   "       Drive [FILE]  Convert FILE to ASCII art\n"+
 				   "Initialization options:\n"+
-				   "  -h, --help           See usage\n"+
-				   "  --color              Add color to output\n"+
+				   "  -h, --help           See usage\n"+      
+				   "  --color              Add color to output(feature pending)\n"+
 				   "  --output [filename]  Save output to filename.txt\n"+
 				   "  --save [filename]    Save output to filename.png\n");	
 
@@ -57,16 +57,16 @@ public class  Drive{
 	    input = args[0];
 	}else{//  Begin Tutorial
 	    Scanner reader = new Scanner(System.in);
-	    System.out.println("Welcome to the Swagscii tutorial! Please enter the name of the image you would like to conver to ASCII art");
+	    System.out.println("Welcome to the Swagscii tutorial! Please enter the name of the image you would like to convert to ASCII art");
 	    input = reader.nextLine();
-	    //System.out.println("Would you like your image to be returned in color? Y/n");
-	    //color = reader.nextLine().toLowerCase().equals("y");
-	    System.out.println("Would you like to out put your ASCII art to a text file?");
+	    System.out.println("Would you like your image to be returned in color? Y/n(feature pending)");
+	    color = reader.nextLine().toLowerCase().equals("y");
+	    System.out.println("Would you like to out put your ASCII art to a text file? Y/n");
 	    if(reader.nextLine().toLowerCase().equals("y")){
 		System.out.println("please enter a name for the output file");
 		outtxt = reader.nextLine();
 	    }
-	    System.out.println("Would you like to out put your ASCII art to an image file?");
+	    System.out.println("Would you like to out put your ASCII art to an image file? Y/n");
 	    if(reader.nextLine().toLowerCase().equals("y")){
 		System.out.println("please enter a name for the output file, without any file extensions");
 		outimg = reader.nextLine();
