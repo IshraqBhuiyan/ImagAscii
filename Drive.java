@@ -80,12 +80,11 @@ public class  Drive{
 	//Begin doing stuff with the parameters gathered
 	System.out.println("begin processing");
 	String text = ImageProcessing.imageToAscii(input,3);
-<<<<<<< HEAD
+
 	//String[] splitText = ImageProcessing.imageToAsciiArray(input, 3);;
 	//System.out.println("begin rendering");
 	//BufferedImage renderIMG = ImageOutput.renderTextToImage(splitText);
 	//ImageIO.write(renderIMG, "png", new File(outimg + ".png"));
-=======
 	String[] splitText = ImageProcessing.imageToAsciiArray(input, 3);;
 	System.out.println("begin rendering");
 	BufferedImage renderIMG = ImageOutput.renderTextToImage(splitText);
@@ -95,7 +94,7 @@ public class  Drive{
 	    txtfile.println(text);
 	    txtfile.close();
 	}
->>>>>>> 8cdb04e0a2808eb02145296a8655406762534601
+
 	System.out.println("begin jframing");
 	SwagWindow output = new SwagWindow(input,text,Iwidth,Iheight,2);
 	output.pack();
