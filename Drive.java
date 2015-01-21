@@ -1,11 +1,12 @@
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.awt.Rectangle;
 import java.io.*;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import java.util.Scanner;
 public class  Drive{
-    public static void main(String[]args) throws IOException{
+    public static void main(String[]args) throws Exception{
 	String input;
 	String outtxt = "noout";
 	String outimg = "noout";
@@ -79,14 +80,23 @@ public class  Drive{
 	//Begin doing stuff with the parameters gathered
 	System.out.println("begin processing");
 	String text = ImageProcessing.imageToAscii(input,3);
-	String[] splitText = ImageProcessing.imageToAsciiArray(input, 3);;
-	System.out.println("begin rendering");
-	BufferedImage renderIMG = ImageOutput.renderTextToImage(splitText);
-	ImageIO.write(renderIMG, "png", new File(outimg + ".png"));
+	//String[] splitText = ImageProcessing.imageToAsciiArray(input, 3);;
+	//System.out.println("begin rendering");
+	//BufferedImage renderIMG = ImageOutput.renderTextToImage(splitText);
+	//ImageIO.write(renderIMG, "png", new File(outimg + ".png"));
 	System.out.println("begin jframing");
 	SwagWindow output = new SwagWindow(input,text,Iwidth,Iheight,2);
 	output.pack();
 	output.setVisible(true);
+	Thread.sleep(1000);
+	BufferedImage outputIMG = takeScreenshot(output);
+	ImageIO.write(outputIMG, "png", new File(outimg + ".png"));
     //System.out.println(input,color,outimg,outtxt,tutorial);
 }
+    public static BufferedImage takeScreenshot(JFrame argFrame){
+	Rectangle rec = argFrame.getBounds();
+	BufferedImage output = new BufferedImage(rec.width, rec.height, BufferedImage.TYPE_INT_ARGB);
+	argFrame.paint(output.getGraphics());
+	return output;
+    }
 }
