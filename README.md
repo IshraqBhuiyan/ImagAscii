@@ -6,7 +6,7 @@ Program currently outputs .png for image files and .txt for text files.
 
 To Run The Program: 
    - `java Drive` for full guided tutorial
-   - `java Drive -h` or `java Drive --help` for help
+   - `java Drive potato -h` or `java Drive potato --help` for help
 
 Swagscii will have many features in addition to the basic ASCII art functions these include but are not limited to
   - Font and resolution(scale) control (with suggested values)
